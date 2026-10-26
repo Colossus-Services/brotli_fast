@@ -160,7 +160,8 @@ Please file feature requests and bugs at the
 
 `brotli_fast` is inspired by
 [brotli_neo](https://github.com/unk-404/dart_brotli) (repository
-`dart_brotli`): a full rewrite as a pure Dart Brotli package, with:
+`dart_brotli`, MIT license): a full rewrite as a pure Dart Brotli package,
+with:
 
 - **One optimized implementation:** up to 1.7× faster encoding at the
   default quality and 2.2× at quality 9, with output byte-identical to
