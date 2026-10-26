@@ -1,0 +1,199 @@
+{
+  "schema": "brotli_fast/perf_history@1",
+  "label": "per-platform byte access",
+  "date": "2026-10-26T21:03:52.565810Z",
+  "commit": "0aa37cf",
+  "dirty": false,
+  "host": {
+    "os": "macos",
+    "cpu": "Apple M5",
+    "cores": 10,
+    "dart": "3.13.5"
+  },
+  "settings": {
+    "compile": "aot",
+    "runs": 5,
+    "discarded_runs": 1,
+    "rounds": 25,
+    "warmup": 3,
+    "statistic": "median across runs of per-run median MB/s"
+  },
+  "results": [
+    {
+      "corpus": "text",
+      "op": "encode",
+      "quality": 0,
+      "mb_per_second": 1517.7,
+      "min_mb_per_second": 1507.7,
+      "max_mb_per_second": 1527.1,
+      "spread_pct": 1.3,
+      "raw_bytes": 1048576,
+      "output_bytes": 12489
+    },
+    {
+      "corpus": "text",
+      "op": "decode",
+      "quality": 0,
+      "mb_per_second": 2915.4,
+      "min_mb_per_second": 2902.3,
+      "max_mb_per_second": 2999.1,
+      "spread_pct": 3.3,
+      "raw_bytes": 1048576,
+      "output_bytes": 1048576
+    },
+    {
+      "corpus": "text",
+      "op": "encode",
+      "quality": 1,
+      "mb_per_second": 1184.6,
+      "min_mb_per_second": 1157.1,
+      "max_mb_per_second": 1220.5,
+      "spread_pct": 5.4,
+      "raw_bytes": 1048576,
+      "output_bytes": 12128
+    },
+    {
+      "corpus": "text",
+      "op": "decode",
+      "quality": 1,
+      "mb_per_second": 3349.2,
+      "min_mb_per_second": 3297.8,
+      "max_mb_per_second": 3430.5,
+      "spread_pct": 4.0,
+      "raw_bytes": 1048576,
+      "output_bytes": 1048576
+    },
+    {
+      "corpus": "text",
+      "op": "encode",
+      "quality": 5,
+      "mb_per_second": 854.5,
+      "min_mb_per_second": 850.0,
+      "max_mb_per_second": 866.3,
+      "spread_pct": 1.9,
+      "raw_bytes": 1048576,
+      "output_bytes": 12546
+    },
+    {
+      "corpus": "text",
+      "op": "decode",
+      "quality": 5,
+      "mb_per_second": 3328.4,
+      "min_mb_per_second": 3258.1,
+      "max_mb_per_second": 3364.4,
+      "spread_pct": 3.2,
+      "raw_bytes": 1048576,
+      "output_bytes": 1048576
+    },
+    {
+      "corpus": "text",
+      "op": "encode",
+      "quality": 9,
+      "mb_per_second": 92.0,
+      "min_mb_per_second": 89.1,
+      "max_mb_per_second": 92.9,
+      "spread_pct": 4.1,
+      "raw_bytes": 1048576,
+      "output_bytes": 10774
+    },
+    {
+      "corpus": "text",
+      "op": "decode",
+      "quality": 9,
+      "mb_per_second": 2814.7,
+      "min_mb_per_second": 2660.8,
+      "max_mb_per_second": 2851.0,
+      "spread_pct": 6.8,
+      "raw_bytes": 1048576,
+      "output_bytes": 1048576
+    },
+    {
+      "corpus": "binary",
+      "op": "encode",
+      "quality": 0,
+      "mb_per_second": 512.4,
+      "min_mb_per_second": 507.1,
+      "max_mb_per_second": 514.3,
+      "spread_pct": 1.4,
+      "raw_bytes": 1048576,
+      "output_bytes": 167026
+    },
+    {
+      "corpus": "binary",
+      "op": "decode",
+      "quality": 0,
+      "mb_per_second": 1145.0,
+      "min_mb_per_second": 1134.6,
+      "max_mb_per_second": 1157.6,
+      "spread_pct": 2.0,
+      "raw_bytes": 1048576,
+      "output_bytes": 1048576
+    },
+    {
+      "corpus": "binary",
+      "op": "encode",
+      "quality": 1,
+      "mb_per_second": 520.1,
+      "min_mb_per_second": 509.2,
+      "max_mb_per_second": 523.3,
+      "spread_pct": 2.7,
+      "raw_bytes": 1048576,
+      "output_bytes": 167026
+    },
+    {
+      "corpus": "binary",
+      "op": "decode",
+      "quality": 1,
+      "mb_per_second": 1146.0,
+      "min_mb_per_second": 1126.3,
+      "max_mb_per_second": 1155.0,
+      "spread_pct": 2.5,
+      "raw_bytes": 1048576,
+      "output_bytes": 1048576
+    },
+    {
+      "corpus": "binary",
+      "op": "encode",
+      "quality": 5,
+      "mb_per_second": 356.8,
+      "min_mb_per_second": 353.8,
+      "max_mb_per_second": 364.5,
+      "spread_pct": 3.0,
+      "raw_bytes": 1048576,
+      "output_bytes": 159953
+    },
+    {
+      "corpus": "binary",
+      "op": "decode",
+      "quality": 5,
+      "mb_per_second": 1306.4,
+      "min_mb_per_second": 1296.1,
+      "max_mb_per_second": 1329.0,
+      "spread_pct": 2.5,
+      "raw_bytes": 1048576,
+      "output_bytes": 1048576
+    },
+    {
+      "corpus": "binary",
+      "op": "encode",
+      "quality": 9,
+      "mb_per_second": 26.3,
+      "min_mb_per_second": 26.2,
+      "max_mb_per_second": 26.4,
+      "spread_pct": 0.5,
+      "raw_bytes": 1048576,
+      "output_bytes": 159455
+    },
+    {
+      "corpus": "binary",
+      "op": "decode",
+      "quality": 9,
+      "mb_per_second": 1329.0,
+      "min_mb_per_second": 1317.6,
+      "max_mb_per_second": 1339.4,
+      "spread_pct": 1.6,
+      "raw_bytes": 1048576,
+      "output_bytes": 1048576
+    }
+  ]
+}

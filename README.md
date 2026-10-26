@@ -123,10 +123,10 @@ try {
 
 | quality | text encode | text decode | binary encode | binary decode |
 |---|--:|--:|--:|--:|
-| 0 | 938 | 2836 | 417 | 1131 |
-| 1 | 812 | 3241 | 424 | 1133 |
-| 5 (default) | 510 | 3233 | 302 | 1302 |
-| 9 | 72 | 2811 | 26 | 1307 |
+| 0 | 1518 | 2915 | 512 | 1145 |
+| 1 | 1185 | 3349 | 520 | 1146 |
+| 5 (default) | 855 | 3328 | 357 | 1306 |
+| 9 | 92 | 2815 | 26 | 1329 |
 
 Throughput in MB/s on the deterministic 1 MiB text and binary corpus of
 [`benchmark/`](benchmark/), measured AOT on an Apple M5 (median of 5 runs).
