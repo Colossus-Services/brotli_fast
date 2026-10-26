@@ -156,6 +156,21 @@ The official source code is
 Please file feature requests and bugs at the
 [issue tracker](https://github.com/Colossus-Services/brotli_fast/issues).
 
+## Origin
+
+`brotli_fast` is inspired by [dart_brotli](https://github.com/unk-404/dart_brotli):
+a full rewrite as a pure Dart Brotli package, with:
+
+- **One optimized implementation:** up to 1.7× faster encoding at the
+  default quality and 2.2× at quality 9, with output byte-identical to
+  dart_brotli's.
+- **A new, simpler API:** `brotliEncode`/`brotliDecode`, the `brotli`
+  `dart:convert` codec with stream support, and `BrotliDictionary`.
+- **Correctness fixes:** valid streams that failed or decoded wrongly now
+  decode correctly, and every quality is cross-checked against Google's
+  reference `brotli` tool in CI.
+- **No dependencies.**
+
 ## License
 
 [MIT](LICENSE). Includes the RFC 7932 static dictionary and tables from
