@@ -1,0 +1,5 @@
+# The reference test corpus must be checked out byte-for-byte: Git's
+# autocrlf/eol conversion (on by default on Windows) changes the text files
+# and breaks the manifest hashes and the decoded-length assertions.
+test/testdata/** -text
+test/decoder/compound_vectors/** -text
