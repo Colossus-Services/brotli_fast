@@ -158,12 +158,13 @@ Please file feature requests and bugs at the
 
 ## Origin
 
-`brotli_fast` is inspired by [dart_brotli](https://github.com/unk-404/dart_brotli):
-a full rewrite as a pure Dart Brotli package, with:
+`brotli_fast` is inspired by
+[brotli_neo](https://github.com/unk-404/dart_brotli) (repository
+`dart_brotli`): a full rewrite as a pure Dart Brotli package, with:
 
 - **One optimized implementation:** up to 1.7× faster encoding at the
   default quality and 2.2× at quality 9, with output byte-identical to
-  dart_brotli's.
+  brotli_neo's.
 - **A new, simpler API:** `brotliEncode`/`brotliDecode`, the `brotli`
   `dart:convert` codec with stream support, and `BrotliDictionary`.
 - **Correctness fixes:** valid streams that failed or decoded wrongly now

@@ -21,7 +21,7 @@ no dependencies.
 - **License:** Apache 2.0. The bundled google/brotli dictionary, tables and
   test corpus keep their MIT notice in `NOTICE`.
 
-Inspired by [dart_brotli](https://github.com/unk-404/dart_brotli), as a full
+Inspired by [brotli_neo](https://github.com/unk-404/dart_brotli), as a full
 rewrite. Compared with it:
 
 - Fixes four decoder bugs that rejected or silently misdecoded valid streams

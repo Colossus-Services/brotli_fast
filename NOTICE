@@ -6,7 +6,7 @@ Copyright 2026 brotli_fast contributors
 Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 This package is an independent Dart implementation of the Brotli compression
-format (RFC 7932), inspired by dart_brotli
+format (RFC 7932), inspired by the brotli_neo package
 (https://github.com/unk-404/dart_brotli).
 
 
