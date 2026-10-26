@@ -11,7 +11,7 @@ import 'dart:typed_data';
 
 import '../common/bit_utils.dart';
 import 'command.dart';
-import 'match_finder.dart' show read32le;
+import 'byte_access.dart';
 
 /// Hash multiplier (`kHashMul32`).
 const int _kHashMul = 0x1E35A7BD;
@@ -115,6 +115,7 @@ final class FastParseParams {
 final class FastHasher {
   FastHasher(Uint8List input, int bucketBits, {bool trackChain = true})
     : _input = input,
+      _view = ByteData.sublistView(input),
       _buckets = Uint32List(1 << bucketBits),
       _shift = 32 - bucketBits,
       _prev = trackChain ? Uint32List(input.length + 1) : Uint32List(1),
@@ -122,6 +123,9 @@ final class FastHasher {
       _trackChain = trackChain;
 
   final Uint8List _input;
+
+  /// The input as `ByteData`, for single-load reads on the VM.
+  final ByteData _view;
   final int _shift;
   final Uint32List _buckets;
   final Uint32List _prev;
@@ -140,7 +144,8 @@ final class FastHasher {
   }
 
   @pragma('vm:prefer-inline')
-  int _hash(int pos) => mul32(read32le(_input, pos), _kHashMul) >> _shift;
+  int _hash(int pos) =>
+      mul32(read32At(_view, _input, pos), _kHashMul) >> _shift;
 
   /// Inserts [pos] and returns the previous head (0 when empty).
   int insert(int pos) {
@@ -152,20 +157,9 @@ final class FastHasher {
   }
 
   /// Length of the match between [a] and [b] (b > a), at most [limit].
-  int matchLength(int a, int b, int limit) {
-    final data = _input;
-    var matched = 0;
-    while (matched + 4 <= limit) {
-      if (read32le(data, a + matched) != read32le(data, b + matched)) {
-        break;
-      }
-      matched += 4;
-    }
-    while (matched < limit && data[a + matched] == data[b + matched]) {
-      matched++;
-    }
-    return matched;
-  }
+  @pragma('vm:prefer-inline')
+  int matchLength(int a, int b, int limit) =>
+      findMatchLength(_input, a, b, limit);
 
   /// Best match at [pos]; writes to [outLen]/[outDistance].
   ///

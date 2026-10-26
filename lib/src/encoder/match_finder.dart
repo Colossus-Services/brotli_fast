@@ -25,17 +25,12 @@ library;
 import 'dart:typed_data';
 
 import '../common/bit_utils.dart';
+import 'byte_access.dart';
+
+export 'byte_access.dart' show findMatchLength, read32le;
 
 /// 32-bit hash multiplier from `c/enc/hash_base.h`.
 const int kHashMul32 = 0x1E35A7BD;
-
-/// Reads an unaligned little-endian 32-bit value without `ByteData`.
-@pragma('vm:prefer-inline')
-int read32le(Uint8List data, int index) {
-  final lo = data[index] | (data[index + 1] << 8);
-  final hi = data[index + 2] | (data[index + 3] << 8);
-  return lo | (hi << 16);
-}
 
 /// Hash of the four bytes at [pos], folded into `tableBits` bits.
 int hash4(Uint8List data, int pos, int tableBits) {
@@ -64,24 +59,6 @@ bool isMatch(Uint8List data, int a, int b, int minMatch) {
   if (read32le(data, a) != read32le(data, b)) return false;
   if (minMatch == 4) return true;
   return data[a + 4] == data[b + 4] && data[a + 5] == data[b + 5];
-}
-
-/// Length of the common prefix of `data[a..]` and `data[b..]`, capped at
-/// [limit] bytes (`FindMatchLengthWithLimit`).
-///
-/// Overlapping ranges are fine: the input buffer already holds the bytes the
-/// decoder will reproduce, so a self-referential copy compares correctly.
-@pragma('vm:prefer-inline')
-int findMatchLength(Uint8List data, int a, int b, int limit) {
-  var matched = 0;
-  while (limit - matched >= 4) {
-    if (read32le(data, a + matched) != read32le(data, b + matched)) break;
-    matched += 4;
-  }
-  while (matched < limit && data[a + matched] == data[b + matched]) {
-    matched++;
-  }
-  return matched;
 }
 
 /// Single-slot hash table used by the greedy matcher.

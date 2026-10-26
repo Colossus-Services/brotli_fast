@@ -15,20 +15,10 @@ const int k16Mask = 0xFFFF;
 const bool jsNumbers = bool.fromEnvironment('dart.library.js_util');
 
 /// Returns the floor of log2 of [x]; [x] must be positive.
+@pragma('vm:prefer-inline')
 int log2Floor(int x) {
   assert(x > 0);
-  var result = -1;
-  var step = 16;
-  var v = x;
-  while (step > 0) {
-    final next = v >> step;
-    if (next != 0) {
-      result += step;
-      v = next;
-    }
-    step >>= 1;
-  }
-  return result + v;
+  return x.bitLength - 1;
 }
 
 /// Low 32 bits of `a * b` for 32-bit [a] and [b], identical on every platform.

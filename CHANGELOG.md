@@ -41,5 +41,10 @@ implementation instead of two:
   input.
 - The fast tier's hash is now exact under dart2js, so web output matches the
   VM.
-- Quality 9 encodes 60% faster on text and 30% faster on binary, with
-  byte-identical output.
+- Faster encoding with byte-identical output. Against brotli_neo 0.2.0 on
+  the same machine (AOT): text q5 1.7× (858 vs 502 MB/s), text q9 2.2×
+  (93 vs 43 MB/s), binary q0–q5 +24–41%. See `benchmark/HISTORY.md`.
+- Web-motivated code has per-platform implementations, so the VM, AOT and
+  dart2wasm no longer pay for dart2js limits: unaligned reads and 8-byte
+  match-length comparison use `ByteData` there, while dart2js keeps its
+  32-bit-safe paths.
