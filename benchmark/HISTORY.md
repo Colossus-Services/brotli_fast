@@ -23,8 +23,8 @@ Host: macOS, Apple M5, 10 cores, Dart 3.13.5. AOT, median of 5 runs × 25
 rounds (1 warm-up run discarded).
 Snapshot: [`history/baseline.json`](history/baseline.json).
 
-Δ against the brotli_neo v0.2.0 baseline (`de22037`) measured on the same
-host, i.e. what this package gained over the code it was derived from.
+Δ against the dart_brotli (brotli_neo) v0.2.0 baseline (`de22037`)
+measured on the same host, i.e. what this package gained over it.
 Compressed sizes are identical: the encoder output is byte-identical.
 
 | corpus | op | q | MB/s | spread | compressed bytes | Δ MB/s | Δ bytes |

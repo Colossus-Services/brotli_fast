@@ -173,5 +173,6 @@ a full rewrite as a pure Dart Brotli package, with:
 
 ## License
 
-[MIT](LICENSE). Includes the RFC 7932 static dictionary and tables from
-[google/brotli](https://github.com/google/brotli) (MIT); see [NOTICE](NOTICE).
+[Apache License 2.0](LICENSE). Includes the RFC 7932 static dictionary and
+tables from [google/brotli](https://github.com/google/brotli) (MIT); see
+[NOTICE](NOTICE).

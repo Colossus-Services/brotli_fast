@@ -18,9 +18,11 @@ no dependencies.
   encoder produces byte-identical output on all of them.
 - **Interoperability:** CI cross-checks against the reference `brotli` CLI
   in both directions.
+- **License:** Apache 2.0. The bundled google/brotli dictionary, tables and
+  test corpus keep their MIT notice in `NOTICE`.
 
-Derived from [brotli_neo](https://github.com/gmpassos/dart_brotli), as one
-implementation instead of two:
+Inspired by [dart_brotli](https://github.com/unk-404/dart_brotli), as a full
+rewrite. Compared with it:
 
 - Fixes four decoder bugs that rejected or silently misdecoded valid streams
   on the VM and WASM:
