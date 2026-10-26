@@ -1,0 +1,23 @@
+name: brotli_fast
+description: >-
+  Fast, pure Dart Brotli (RFC 7932) encoder and decoder with no native
+  dependencies. Works on the VM, AOT, Flutter, and the web (JS and Wasm), with
+  one-shot functions, a dart:convert codec and streaming.
+version: 1.0.0
+repository: https://github.com/Colossus-Services/brotli_fast
+issue_tracker: https://github.com/Colossus-Services/brotli_fast/issues
+
+topics:
+  - brotli
+  - compression
+  - codec
+  - decompression
+
+environment:
+  sdk: ^3.13.5
+
+dev_dependencies:
+  crypto: ^3.0.6
+  dependency_validator: ^5.1.0
+  lints: ^6.1.0
+  test: ^1.33.0

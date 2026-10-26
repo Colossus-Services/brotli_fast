@@ -1,0 +1,10 @@
+# Pub uses this file instead of .gitignore, so repeat its entries.
+.dart_tool/
+pubspec.lock
+doc/api/
+coverage/
+build/
+.DS_Store
+
+# The reference test corpus (3.5 MB) is only needed to run the tests.
+test/testdata/

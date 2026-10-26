@@ -1,0 +1,113 @@
+name: Dart CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dart-lang/setup-dart@v1
+      - name: Dart version
+        run: |
+          dart --version
+          uname -a
+      - name: Install dependencies
+        run: dart pub get
+      - name: dart format
+        run: dart format -o none --set-exit-if-changed .
+      - name: dart analyze
+        run: dart analyze --fatal-infos --fatal-warnings .
+      - name: dependency_validator
+        run: dart run dependency_validator
+      - name: dart doc
+        run: dart doc --dry-run
+      - name: dart pub publish --dry-run
+        run: dart pub publish --dry-run
+
+  # Full suite on Linux, cross-checked against the reference `brotli` CLI.
+  test_vm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      BROTLI_CLI_REQUIRED: '1'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dart-lang/setup-dart@v1
+      - name: Install the reference brotli CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y brotli
+          brotli --version
+      - name: Install dependencies
+        run: dart pub get
+      - name: Run tests (VM)
+        run: dart test --platform vm --coverage=./coverage
+      - name: Generate coverage report
+        run: |
+          dart pub global activate coverage
+          dart pub global run coverage:format_coverage --packages=.dart_tool/package_config.json --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v7
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          directory: ./coverage/
+          flags: unittests
+          env_vars: OS,DART
+          fail_ci_if_error: false
+          verbose: true
+
+  # The VM suite on the other desktop platforms. macOS also cross-checks
+  # against the reference CLI; Windows has no packaged CLI, so those tests skip.
+  test_macos:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    env:
+      BROTLI_CLI_REQUIRED: '1'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dart-lang/setup-dart@v1
+      - name: Install the reference brotli CLI
+        run: |
+          brew install brotli
+          brotli --version
+      - name: Install dependencies
+        run: dart pub get
+      - name: Run tests (VM)
+        run: dart test --platform vm
+
+  test_windows:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dart-lang/setup-dart@v1
+      - name: Install dependencies
+        run: dart pub get
+      - name: Run tests (VM)
+        run: dart test --platform vm
+
+  # The web builds use separate 32-bit paths (dart2js) and a separate
+  # compiler (dart2wasm); test/parity_test.dart checks their output is
+  # byte-identical to the VM's.
+  test_web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dart-lang/setup-dart@v1
+      - name: Install dependencies
+        run: dart pub get
+      - name: Run tests (Chrome, dart2js)
+        run: dart test --platform chrome --compiler dart2js
+      - name: Run tests (Chrome, dart2wasm)
+        run: dart test --platform chrome --compiler dart2wasm

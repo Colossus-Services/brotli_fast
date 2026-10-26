@@ -1,0 +1,322 @@
+{
+  "source": "google/brotli tests/testdata (MIT)",
+  "license": "MIT",
+  "variantsNote": "The malformed[] entries are *.compressed.NN coverage variants: empty wbits 10..24, metadata/empty frames, valid X streams, and one compressed stream; they are not uniformly malformed.",
+  "entries": [
+    {
+      "name": "10x10y",
+      "compressed": "10x10y.compressed",
+      "raw": "10x10y",
+      "rawBytes": 20,
+      "compressedBytes": 12,
+      "rawSha256": "41bd4c895e9fb36d74bc97db5092872a24267e3b0455ff6152b0d262faa00d49",
+      "compressedSha256": "d666afc0f6c35d8d7796175aa9a68f16ba59afedee946d4bce9167f6c86e0b84"
+    },
+    {
+      "name": "64x",
+      "compressed": "64x.compressed",
+      "raw": "64x",
+      "rawBytes": 64,
+      "compressedBytes": 10,
+      "rawSha256": "be4d3ed1fc5f5cfa00735b28605a975f3293fa235d23abb1d9dea380fba0fb87",
+      "compressedSha256": "f0273c38c6a55c1d9ccb047da04bacdc4bb07acc44ff83871e6b3490dfc2c313"
+    },
+    {
+      "name": "alice29.txt",
+      "compressed": "alice29.txt.compressed",
+      "raw": "alice29.txt",
+      "rawBytes": 152089,
+      "compressedBytes": 50096,
+      "rawSha256": "7467306ee0feed4971260f3c87421154a05be571d944e9cb021a5713700c38f0",
+      "compressedSha256": "69e902ef5cd9247302e4f66c313271bcff32eeb38e5eec7ca7744cf98106d5c2"
+    },
+    {
+      "name": "asyoulik.txt",
+      "compressed": "asyoulik.txt.compressed",
+      "raw": "asyoulik.txt",
+      "rawBytes": 125179,
+      "compressedBytes": 45687,
+      "rawSha256": "eaa3526fe53859f34ecdf255712f9ecf0b2c903451d4755b2edaa2e2599cb0fc",
+      "compressedSha256": "605f6bdf129de59fb490f55180f3183e44ff7e2eab88ee931bd51a3757434404"
+    },
+    {
+      "name": "backward65536",
+      "compressed": "backward65536.compressed",
+      "raw": "backward65536",
+      "rawBytes": 65792,
+      "compressedBytes": 19,
+      "rawSha256": "a6dbac2165542001c574fe1d5ed6ca646203660c228cac57b47a9fec68c20217",
+      "compressedSha256": "757a524ce5fb43ea5e150b919ff635fd494142508d779f39e48e29ba1f61fb86"
+    },
+    {
+      "name": "compressed_file",
+      "compressed": "compressed_file.compressed",
+      "raw": "compressed_file",
+      "rawBytes": 50096,
+      "compressedBytes": 50100,
+      "rawSha256": "69e902ef5cd9247302e4f66c313271bcff32eeb38e5eec7ca7744cf98106d5c2",
+      "compressedSha256": "ee6a6e2c37f742596f6fd5a11f186c70687b60b46f4998795d4e8f33d14eccb0"
+    },
+    {
+      "name": "compressed_repeated",
+      "compressed": "compressed_repeated.compressed",
+      "raw": "compressed_repeated",
+      "rawBytes": 144224,
+      "compressedBytes": 50299,
+      "rawSha256": "9538e078cb2d9493befede2c004dafcfcbf5a3caf0329285e7d4d49b48da0734",
+      "compressedSha256": "5839e626bc601d2d7e121408a0af76676369de5dc5102329ffc05ef16f0b16b7"
+    },
+    {
+      "name": "cp1251-utf16le",
+      "compressed": "cp1251-utf16le.compressed",
+      "raw": "cp1251-utf16le",
+      "rawBytes": 1554,
+      "compressedBytes": 632,
+      "rawSha256": "0817dfe4fe7b6e29e63bbb048a785f7cbe67dc3188f96df5b5bc69826ca2a6e6",
+      "compressedSha256": "d69e14971ccd758e47ba4e6bb13df1b23fcfd3d9586674bd4b46130accffeca5"
+    },
+    {
+      "name": "cp852-utf8",
+      "compressed": "cp852-utf8.compressed",
+      "raw": "cp852-utf8",
+      "rawBytes": 706,
+      "compressedBytes": 362,
+      "rawSha256": "37465d3004d504c3d4320de2f821fa42f79a10917421cf1872ace46cfb152c42",
+      "compressedSha256": "38f328ac5b0228a304ce18a7a81bd69dfbfd8d28baa7106e0d107e9eef4e6cee"
+    },
+    {
+      "name": "empty",
+      "compressed": "empty.compressed",
+      "raw": "empty",
+      "rawBytes": 0,
+      "compressedBytes": 1,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compressedSha256": "67586e98fad27da0b9968bc039a1ef34c939b9b8e523a8bef89d478608c5ecf6"
+    },
+    {
+      "name": "lcet10.txt",
+      "compressed": "lcet10.txt.compressed",
+      "raw": "lcet10.txt",
+      "rawBytes": 426754,
+      "compressedBytes": 124719,
+      "rawSha256": "5314ba1dbb03f471df88bec6cd120a938ef60d0fd3511c5c1dce61bf7463245f",
+      "compressedSha256": "0b35d0fdd8513ccceee08d5a4a0e771aa0ed6b8647ffeba75ac956b1b6e9fd44"
+    },
+    {
+      "name": "mapsdatazrh",
+      "compressed": "mapsdatazrh.compressed",
+      "raw": "mapsdatazrh",
+      "rawBytes": 285886,
+      "compressedBytes": 161743,
+      "rawSha256": "bf076e57b5e6a8b648f1f0f1d7815cafcdf36c636ec08a547380b56685458101",
+      "compressedSha256": "a01fb86df686ca38d90aeead4a7c49392937ac05367bed390fb0d878dd5b626b"
+    },
+    {
+      "name": "monkey",
+      "compressed": "monkey.compressed",
+      "raw": "monkey",
+      "rawBytes": 843,
+      "compressedBytes": 425,
+      "rawSha256": "937ad127fe0e373e0e267d11905f2bca154f40fe6fd438b6ddcce40de2ddcd99",
+      "compressedSha256": "37bcdd7a42a6c5b119926d5af0f0d4e9162304592a2ded12c8fe9b06bf3908d9"
+    },
+    {
+      "name": "plrabn12.txt",
+      "compressed": "plrabn12.txt.compressed",
+      "raw": "plrabn12.txt",
+      "rawBytes": 481861,
+      "compressedBytes": 174771,
+      "rawSha256": "07e2e0b461af78c7c647cb53dab39de560198e16f799b4516eccf0fbd69f764c",
+      "compressedSha256": "9470506129c6e067e36e3c85cd72fc83ee1ec88b01276a89e714ec9b5b47daa4"
+    },
+    {
+      "name": "quickfox",
+      "compressed": "quickfox.compressed",
+      "raw": "quickfox",
+      "rawBytes": 43,
+      "compressedBytes": 47,
+      "rawSha256": "d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592",
+      "compressedSha256": "319f52f063ba1fd6b50414d4f7f4ef77694bece4fa41f63968d96a375a8cfb02"
+    },
+    {
+      "name": "quickfox_repeated",
+      "compressed": "quickfox_repeated.compressed",
+      "raw": "quickfox_repeated",
+      "rawBytes": 176128,
+      "compressedBytes": 58,
+      "rawSha256": "254fdc641d1a65d0b1e427e4b0a1e16a96a5242adb98af71833782ba99c3dd82",
+      "compressedSha256": "f732c7cfd6e33481e99352ed901b90647a6177dc3e34f5d1de1658c24e2d6e5a"
+    },
+    {
+      "name": "random_org_10k.bin",
+      "compressed": "random_org_10k.bin.compressed",
+      "raw": "random_org_10k.bin",
+      "rawBytes": 10000,
+      "compressedBytes": 10004,
+      "rawSha256": "3035553aebbac63be49232495f41022bd9de43c6818917f3865e12ce8808b39e",
+      "compressedSha256": "b20da1957453441b81ecfed5dea559fe00eb1cc89c6647c1c3348dc645830497"
+    },
+    {
+      "name": "ukkonooa",
+      "compressed": "ukkonooa.compressed",
+      "raw": "ukkonooa",
+      "rawBytes": 119,
+      "compressedBytes": 69,
+      "rawSha256": "1fb2529b0c6fbf80a60d2bb4c20efba2fff6cecb0c52d42693d404501064f407",
+      "compressedSha256": "92f59fc5a282056ef34c9521920baf3bf609ca57c8abd5a286fb4833aede421e"
+    },
+    {
+      "name": "x",
+      "compressed": "x.compressed",
+      "raw": "x",
+      "rawBytes": 1,
+      "compressedBytes": 5,
+      "rawSha256": "4b68ab3847feda7d6c62c1fbcbeebfa35eab7351ed5e78f4ddadea5df64b8015",
+      "compressedSha256": "cd094a625b695542a1d37b3a11ea849d8db9584a2f9df4e60cf6158bb39bbf61"
+    },
+    {
+      "name": "xyzzy",
+      "compressed": "xyzzy.compressed",
+      "raw": "xyzzy",
+      "rawBytes": 5,
+      "compressedBytes": 9,
+      "rawSha256": "7609128715518308672067aab169e24944ead24e3d732aab8a8f0b7013a65564",
+      "compressedSha256": "c3f042a6be42887f842324d0e39dabd0d873e1676cd3dd2d7e2824242b318f14"
+    },
+    {
+      "name": "zeros",
+      "compressed": "zeros.compressed",
+      "raw": "zeros",
+      "rawBytes": 262144,
+      "compressedBytes": 13,
+      "rawSha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+      "compressedSha256": "d1236d7fdab24209a747aa471f1bf33765b27adfd676355d4b4b310195dca49f"
+    },
+    {
+      "name": "zerosukkanooa",
+      "compressed": "zerosukkanooa.compressed",
+      "raw": "zerosukkanooa",
+      "rawBytes": 262263,
+      "compressedBytes": 107,
+      "rawSha256": "3f54e9caa8aa46d5eafde978d92ab5ebff42bac1396327320430c3b02fdcb77a",
+      "compressedSha256": "be9e662a29166105aa011613bbc1209e584c4e45d738334e69c4eb8626ecfe92"
+    }
+  ],
+  "malformed": [
+    {
+      "name": "empty.compressed.00",
+      "bytes": 1,
+      "sha256": "67586e98fad27da0b9968bc039a1ef34c939b9b8e523a8bef89d478608c5ecf6"
+    },
+    {
+      "name": "empty.compressed.01",
+      "bytes": 2,
+      "sha256": "ac38783f6a3b2fe3b579718d6ba8493a456d800665b4433a0e7c823cff90a603"
+    },
+    {
+      "name": "empty.compressed.02",
+      "bytes": 2,
+      "sha256": "ef1534d0c6cfe8a961a19e64689dc8ba07d92b0498121852cc77c7fab995e9e2"
+    },
+    {
+      "name": "empty.compressed.03",
+      "bytes": 2,
+      "sha256": "433a0fdd4ca1453e5a512cfbbea0a51b8fd138de3198e064f8ed8f23f6b83572"
+    },
+    {
+      "name": "empty.compressed.04",
+      "bytes": 2,
+      "sha256": "e25be31e89368225296188140d8db9b7c6aef9060329a255bae3ac60b12cc2b1"
+    },
+    {
+      "name": "empty.compressed.05",
+      "bytes": 2,
+      "sha256": "89e451d0952dc7cef33e71a58cbf816825c210cfb5e9a61e0aa5f98d14b46302"
+    },
+    {
+      "name": "empty.compressed.06",
+      "bytes": 2,
+      "sha256": "83d9749292117a7555982bfdbec3c4bd6eebc4ccd972e62d55f08e74217a1adb"
+    },
+    {
+      "name": "empty.compressed.07",
+      "bytes": 2,
+      "sha256": "f8acfa9c2f5dc317a07919235f2c987d7632516e035bd75a41f0e5da8752cf6e"
+    },
+    {
+      "name": "empty.compressed.08",
+      "bytes": 1,
+      "sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce"
+    },
+    {
+      "name": "empty.compressed.09",
+      "bytes": 1,
+      "sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+    },
+    {
+      "name": "empty.compressed.10",
+      "bytes": 1,
+      "sha256": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+    },
+    {
+      "name": "empty.compressed.11",
+      "bytes": 1,
+      "sha256": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+    },
+    {
+      "name": "empty.compressed.12",
+      "bytes": 1,
+      "sha256": "41b805ea7ac014e23556e98bb374702a08344268f92489a02f0880849394a1e4"
+    },
+    {
+      "name": "empty.compressed.13",
+      "bytes": 1,
+      "sha256": "380918b946a526640a40df5dced6516794f3d97bbd9e6bb553d037c4439f31c3"
+    },
+    {
+      "name": "empty.compressed.14",
+      "bytes": 1,
+      "sha256": "8a8de823d5ed3e12746a62ef169bcf372be0ca44f0a1236abc35df05d96928e1"
+    },
+    {
+      "name": "empty.compressed.15",
+      "bytes": 1,
+      "sha256": "58f7b0780592032e4d8602a3e8690fb2c701b2e1dd546e703445aabd6469734d"
+    },
+    {
+      "name": "empty.compressed.16",
+      "bytes": 4,
+      "sha256": "592b1bea772c8f6478bbf8ee7965c9697887d68fbbe07224c5d1680056cbe6de"
+    },
+    {
+      "name": "empty.compressed.17",
+      "bytes": 65538,
+      "sha256": "95a77d2d0275fa7d30042c567a78025d5b79ed96967873de8d57e1d152b890c4"
+    },
+    {
+      "name": "empty.compressed.18",
+      "bytes": 196610,
+      "sha256": "1f3710654b87dc9a31778bfb09d476dca2dc96ac63f0d0ef9f6de17f363a1b2b"
+    },
+    {
+      "name": "x.compressed.00",
+      "bytes": 5,
+      "sha256": "69619f0d475e644c35ffeab36b4868a16a7382518d848c3a9a2c91db722c83ae"
+    },
+    {
+      "name": "x.compressed.01",
+      "bytes": 8,
+      "sha256": "7ff671e6adc5e24be8269e7345ebcf16d94766ffcd95323e137e848c972efe47"
+    },
+    {
+      "name": "x.compressed.02",
+      "bytes": 5,
+      "sha256": "c8d419e71a8bded7281954eda0a0f3cbe5aeeae31920fd5075b993089ce7cb0a"
+    },
+    {
+      "name": "x.compressed.03",
+      "bytes": 10,
+      "sha256": "42db916a1a0954936cdb099292d10851228037eba679af5bbe402106ef209aa5"
+    }
+  ]
+}

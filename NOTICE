@@ -1,0 +1,26 @@
+brotli_fast
+===========
+
+This package is an independent Dart implementation of the Brotli compression
+format (RFC 7932).
+
+It includes data and algorithm-derived tables from the Google Brotli reference
+implementation:
+
+  https://github.com/google/brotli
+  Copyright Google Inc.
+  Licensed under the MIT License.
+
+Specifically:
+  * c/common/dictionary.bin (the RFC 7932 static dictionary, 122,784 bytes)
+  * c/common/context.c  (the 2048-byte context lookup table)
+  * transform tables and format constants derived from the reference Java/C
+    decoder and encoder.
+
+The test corpus under test/testdata is copied from the same repository's
+tests/testdata directory (MIT).
+
+The implementation is derived from brotli_neo
+(https://github.com/gmpassos/dart_brotli, MIT).
+
+The full MIT license text is in LICENSE.
